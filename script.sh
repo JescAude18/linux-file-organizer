@@ -7,7 +7,7 @@
 ## script
 ##
 
-echo "Enter the absolute path of the directory to be ordered : "
+echo "Enter the absolute/relative path of the directory to be ordered : "
 read directory_name
 echo "You entered '$directory_name' as directory to be ordered."
 if [ -d "$directory_name" ]; then
