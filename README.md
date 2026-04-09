@@ -74,7 +74,7 @@ Main files and folders in this repository:
 
 ```text
 linux-file-organizer/
-├── script.sh
+├── file-organizer.sh
 └── README.ms
 ```
 
@@ -91,13 +91,13 @@ Clone and prepare the project:
 ```bash
 git clone https://github.com/JescAude18/linux-file-organizer.git
 cd linux-file-organizer
-chmod +x script.sh
+chmod +x file-organizer.sh
 ```
 
 Run the script and enter the absolute path (or valid relative path) of the folder you want to organize:
 
 ```bash
-./script.sh
+./file-organizer.sh
 ```
 
 ## Example
