@@ -7,8 +7,7 @@
 - [Supported Extensions](#supported-extensions)
 - [Project Structure](#project-structure)
 - [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Installation & Usage](#installation--usage)
 - [Example](#example)
 - [How It Works](#how-it-works)
 - [Error Handling](#error-handling)
@@ -34,12 +33,15 @@ This project is made for training and learning core Bash concepts:
 
 - Ask the user for a directory path.
 - Check if the directory exists.
+- Display current files found in the target directory before reordering.
 - Create category folders automatically:
 
 	- `images`
 	- `documents`
 	- `scripts`
+
 - Move files into categories based on their extensions.
+- Handle paths entered with or without a trailing `/`.
 - Display status messages during execution.
 
 ## Supported Extensions
@@ -73,7 +75,7 @@ Main files and folders in this repository:
 ```text
 linux-file-organizer/
 ├── script.sh
-|__ README.md
+└── README.ms
 ```
 
 ## Requirements
@@ -103,10 +105,17 @@ Run the script and enter the absolute path (or valid relative path) of the folde
 Example execution:
 
 ```text
-Enter the absolute path of the directory to be ordered :
+Welcome to the linux-file-organizer project !
+Enter the absolute/relative path of the directory to be ordered :
 /path/to/folder
+You entered '/path/to/folder' as directory to be ordered.
+Its contains these files :
+/path/to/folder/file1.txt
+/path/to/folder/image1.png
 Starting reordering your folder ...
-Folder /path/to/folder reordered !
+....
+
+Folder '/path/to/folder' reordered !
 ```
 
 ## How It Works
@@ -119,16 +128,16 @@ Folder /path/to/folder reordered !
 
 ## Error Handling
 
-- Folder not found: prints `'<path>' not found.`
+- Folder not found: prints `Directory '<path>' not found.`
 - Unsupported extension: file is ignored (not moved)
 - Missing permissions: `mv` or directory operations may fail depending on system permissions
 
 ## Roadmap
 
 - Add more file extensions
-- Add a dry-run mode (`--dry-run`)
+- Add a dry-run mode (`--dry-run`): simulate actions and print what would be moved, without modifying files
 - Add recursive organization for subfolders
-- Add logging to a file
+- Add logging to a file: save execution details (start time, moved files, errors) into a log file for traceability
 - Add automated tests and CI pipeline
 - Add command-line options instead of interactive input
 
